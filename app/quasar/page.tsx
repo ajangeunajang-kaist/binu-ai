@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+
 export default function Quasar() {
   return (
     <div className="min-h-screen animated-gradient">
@@ -51,9 +53,8 @@ export default function Quasar() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+      <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-5xl mx-auto text-center">
-         
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8">
             <span className="gradient-text-blue">QUASAR</span>
           </h1>
@@ -157,6 +158,8 @@ export default function Quasar() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
