@@ -15,6 +15,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BINU AI",
   description: "숏폼 속 빈 공간, 브랜드 가치로 채우다",
+  openGraph: {
+    title: "BINU AI",
+    description: "숏폼 속 빈 공간, 브랜드 가치로 채우다",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "BINU AI",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BINU AI",
+    description: "숏폼 속 빈 공간, 브랜드 가치로 채우다",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
