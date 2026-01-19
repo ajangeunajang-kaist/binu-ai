@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative py-16 px-6 border-t border-white/5">
+    <footer className="relative py-16 px-6 border-t border-zinc-200/50">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
@@ -14,41 +14,41 @@ export default function Footer() {
               >
                 <path
                   d="M14.5146 6.49555C14.5038 6.54665 14.5532 6.53891 14.5903 6.5513C14.7819 6.61788 15.0029 6.6411 15.1977 6.70459C17.1186 7.32395 17.8218 9.15727 17.1619 11.0231C16.5051 12.8781 14.666 13.4092 12.8671 13.5207H0.0168144C0.00445086 13.5192 -0.00327633 13.5068 0.00135999 13.4959L4.96222 0.0185446C4.96222 0.0185446 4.97149 0.00770569 4.97767 0.00770569L12.7466 0.0417708C12.7466 0.0417708 12.7466 0.0417708 12.7481 0.0417708C14.0138 0.171837 15.5083 0.489262 16.3104 1.56386C17.7322 3.46531 16.6797 5.86999 14.5115 6.49555H14.5146ZM7.85991 5.12831H10.7499C11.6756 5.12831 12.2505 4.05371 11.6787 3.32595C11.382 2.94659 10.9415 2.88466 10.4732 2.87227C9.88135 2.85678 9.27399 2.90324 8.68054 2.90633C8.67281 2.90633 8.66663 2.91098 8.66509 2.91717L7.84446 5.10508C7.83982 5.11592 7.8491 5.12831 7.85991 5.12831ZM5.8323 10.6097C5.82766 10.6205 5.83693 10.6329 5.84775 10.6329H10.6247C12.7157 10.7119 13.0062 8.12603 10.7762 7.97429H6.80902C6.80902 7.97429 6.79511 7.97893 6.79356 7.98513L5.8323 10.6097Z"
-                  fill="white"
+                  fill="#18181B"
                 />
                 <path
                   d="M23.809 0.00310516H18.8389V13.5176H23.809V0.00310516Z"
-                  fill="white"
+                  fill="#18181B"
                 />
                 <path
                   d="M31.0768 0.00310516L36.4457 7.8613L36.37 0.00310516H41.0372V13.5176H35.6683L30.4308 5.69662L30.4509 13.5176H25.8208V0.00310516H31.0768Z"
-                  fill="white"
+                  fill="#18181B"
                 />
                 <path
                   d="M47.9812 0.00310516V8.86777C47.9812 11.1672 52.3455 11.1192 52.3455 8.86777V0.00310516H57.3543V8.60144C57.005 13.2823 51.8433 14.4064 47.9812 13.6895C45.2072 13.1755 42.9091 11.6208 42.974 8.52557V0.00310516H47.9812Z"
-                  fill="white"
+                  fill="#18181B"
                 />
                 <path
                   d="M65.2837 13.5176L71.3727 0L77.0043 0.00774206L82.8893 13.5176H77.5019L76.7941 11.6255L71.3542 11.6379L70.6711 13.5176H65.2837ZM72.4174 8.62001H75.7942L74.1066 3.91284L72.4174 8.62001Z"
-                  fill="white"
+                  fill="#18181B"
                 />
                 <path
                   d="M89 0.00310516H83.9912V13.5176H89V0.00310516Z"
-                  fill="white"
+                  fill="#18181B"
                 />
               </svg>
             </div>
-            <p className="text-zinc-500 max-w-xs">
+            <p className="text-zinc-600 max-w-xs">
               AI의 미래를 함께 만들어가는 기업, BINU AI입니다.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold text-zinc-800 mb-4">Company</h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#about"
-                  className="text-zinc-500 hover:text-white transition-colors text-sm"
+                  className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm"
                 >
                   About
                 </a>
@@ -56,7 +56,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#services"
-                  className="text-zinc-500 hover:text-white transition-colors text-sm"
+                  className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm"
                 >
                   Services
                 </a>
@@ -64,7 +64,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-zinc-500 hover:text-white transition-colors text-sm"
+                  className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm"
                 >
                   Careers
                 </a>
@@ -72,7 +72,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#contact"
-                  className="text-zinc-500 hover:text-white transition-colors text-sm"
+                  className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm"
                 >
                   Contact
                 </a>
@@ -80,12 +80,12 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h4 className="font-semibold text-zinc-800 mb-4">Legal</h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#"
-                  className="text-zinc-500 hover:text-white transition-colors text-sm"
+                  className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm"
                 >
                   Privacy Policy
                 </a>
@@ -93,7 +93,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-zinc-500 hover:text-white transition-colors text-sm"
+                  className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm"
                 >
                   Terms of Service
                 </a>
@@ -101,8 +101,8 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-zinc-600 text-sm">
+        <div className="pt-8 border-t border-zinc-200/50 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-zinc-500 text-sm">
             © 2026 BINU AI. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
@@ -111,7 +111,7 @@ export default function Footer() {
               href="https://www.instagram.com/binu_ai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors"
             >
               <svg
                 className="w-5 h-5"
@@ -126,7 +126,7 @@ export default function Footer() {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors"
             >
               <svg
                 className="w-5 h-5"
