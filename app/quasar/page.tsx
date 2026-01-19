@@ -1,6 +1,76 @@
+"use client";
+
 import Footer from "@/components/Footer";
+import { useState, useRef } from "react";
 
 export default function Quasar() {
+  const [isDragging, setIsDragging] = useState(false);
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith("video/")) {
+      handleFileUpload(file);
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      handleFileUpload(file);
+    }
+  };
+
+  const handleFileUpload = (file: File) => {
+    setUploadedFile(file);
+    setUploadProgress(0);
+
+    // Simulate upload progress
+    const interval = setInterval(() => {
+      setUploadProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setIsAnalyzing(true);
+          // Simulate analysis
+          setTimeout(() => setIsAnalyzing(false), 2000);
+          return 100;
+        }
+        return prev + 10;
+      });
+    }, 200);
+  };
+
+  const resetUpload = () => {
+    setUploadedFile(null);
+    setUploadProgress(0);
+    setIsAnalyzing(false);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  const formatFileSize = (bytes: number) => {
+    if (bytes < 1024 * 1024) {
+      return (bytes / 1024).toFixed(1) + " KB";
+    }
+    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-fuchsia-50">
       {/* Background Effects - Aurora Blobs for Glass Effect */}
@@ -76,22 +146,174 @@ export default function Quasar() {
             브랜드에 최적화된 광고 배치를 제안합니다.
           </p>
 
-          {/* Demo Preview - Glass Card */}
+          {/* Upload Card - Glass Card */}
           <div className="bg-white/60 backdrop-blur-2xl rounded-3xl p-8 md:p-12 max-w-3xl mx-auto border border-white/70 shadow-2xl shadow-purple-300/20">
-            <div className="aspect-video bg-white/70 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-white/50 shadow-inner">
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-[#A755F6]/15 backdrop-blur-sm flex items-center justify-center mx-auto mb-4 border border-[#A755F6]/20">
-                  <svg
-                    className="w-10 h-10 text-[#A755F6]"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
+            {/* Upload Area */}
+            <div
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              onClick={() => !uploadedFile && fileInputRef.current?.click()}
+              className={`relative aspect-[9/16] max-h-[500px] mx-auto rounded-2xl flex items-center justify-center mb-8 border-2 border-dashed transition-all cursor-pointer overflow-hidden ${
+                isDragging
+                  ? "border-[#A755F6] bg-[#A755F6]/10"
+                  : uploadedFile
+                  ? "border-white/50 bg-white/50"
+                  : "border-zinc-300/50 bg-white/70 hover:border-[#A755F6]/50 hover:bg-[#A755F6]/5"
+              }`}
+            >
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="video/*"
+                onChange={handleFileSelect}
+                className="hidden"
+              />
+
+              {!uploadedFile ? (
+                // Upload Prompt
+                <div className="text-center p-6">
+                  <div
+                    className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 transition-all ${
+                      isDragging
+                        ? "bg-[#A755F6]/20 scale-110"
+                        : "bg-[#A755F6]/10"
+                    }`}
                   >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+                    <svg
+                      className={`w-10 h-10 transition-colors ${
+                        isDragging ? "text-[#A755F6]" : "text-[#A755F6]/70"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-zinc-800 mb-2 text-lg">
+                    숏폼 영상 업로드
+                  </h3>
+                  <p className="text-zinc-500 text-sm mb-4">
+                    드래그 앤 드롭 또는 클릭하여 업로드
+                  </p>
+                  <div className="flex items-center justify-center gap-2 text-xs text-zinc-400">
+                    <span className="px-2 py-1 rounded-full bg-zinc-100">
+                      MP4
+                    </span>
+                    <span className="px-2 py-1 rounded-full bg-zinc-100">
+                      MOV
+                    </span>
+                    <span className="px-2 py-1 rounded-full bg-zinc-100">
+                      WebM
+                    </span>
+                  </div>
+                  <p className="text-zinc-400 text-xs mt-3">
+                    최대 500MB · 9:16 세로형 권장
+                  </p>
                 </div>
-                <p className="text-zinc-500">Demo Video Coming Soon</p>
-              </div>
+              ) : (
+                // Uploaded File Preview
+                <div className="absolute inset-0 flex flex-col">
+                  {/* Video Preview */}
+                  <div className="flex-1 bg-zinc-900 flex items-center justify-center relative">
+                    <video
+                      src={URL.createObjectURL(uploadedFile)}
+                      className="max-h-full max-w-full object-contain"
+                      controls={uploadProgress === 100 && !isAnalyzing}
+                    />
+
+                    {/* Upload Progress Overlay */}
+                    {uploadProgress < 100 && (
+                      <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center">
+                        <div className="w-16 h-16 rounded-full border-4 border-white/20 border-t-[#A755F6] animate-spin mb-4" />
+                        <p className="text-white font-medium">
+                          업로드 중... {uploadProgress}%
+                        </p>
+                        <div className="w-48 h-1.5 bg-white/20 rounded-full mt-3 overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-[#A755F6] to-[#8B5CF6] rounded-full transition-all duration-300"
+                            style={{ width: `${uploadProgress}%` }}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Analyzing Overlay */}
+                    {isAnalyzing && (
+                      <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center">
+                        <div className="relative w-20 h-20 mb-4">
+                          <div className="absolute inset-0 rounded-full border-4 border-[#A755F6]/30" />
+                          <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-[#A755F6] animate-spin" />
+                          <div className="absolute inset-2 rounded-full border-4 border-transparent border-t-[#C084FC] animate-spin animation-delay-150" />
+                          <div className="absolute inset-4 rounded-full border-4 border-transparent border-t-[#8B5CF6] animate-spin animation-delay-300" />
+                        </div>
+                        <p className="text-white font-medium">AI 분석 중...</p>
+                        <p className="text-white/60 text-sm mt-1">
+                          빈 공간을 찾고 있습니다
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* File Info Bar */}
+                  <div className="bg-white/90 backdrop-blur-sm px-4 py-3 flex items-center justify-between">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-8 h-8 rounded-lg bg-[#A755F6]/10 flex items-center justify-center flex-shrink-0">
+                        <svg
+                          className="w-4 h-4 text-[#A755F6]"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-zinc-800 truncate">
+                          {uploadedFile.name}
+                        </p>
+                        <p className="text-xs text-zinc-500">
+                          {formatFileSize(uploadedFile.size)}
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        resetUpload();
+                      }}
+                      className="p-2 rounded-lg hover:bg-zinc-100 transition-colors"
+                    >
+                      <svg
+                        className="w-4 h-4 text-zinc-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
+
+            {/* Action Button */}
+            {uploadedFile && uploadProgress === 100 && !isAnalyzing && (
+              <button className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#A755F6] to-[#8B5CF6] hover:from-[#C084FC] hover:to-[#A755F6] text-white font-medium transition-all shadow-lg shadow-[#A755F6]/30 mb-8">
+                AI 영상 분석 시작
+              </button>
+            )}
 
             <div className="grid md:grid-cols-3 gap-6 text-left">
               <div className="bg-white/50 backdrop-blur-md rounded-2xl p-5 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all">
@@ -114,7 +336,7 @@ export default function Quasar() {
                   AI 공간 분석
                 </h3>
                 <p className="text-zinc-500 text-sm">
-                  영상 내 빈 공간을 자동으로 감지
+                  영상 속 빈 공간과 최적의 타이밍을 자동으로 감지
                 </p>
               </div>
               <div className="bg-white/50 backdrop-blur-md rounded-2xl p-5 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all">
@@ -137,7 +359,7 @@ export default function Quasar() {
                   브랜드 매칭
                 </h3>
                 <p className="text-zinc-500 text-sm">
-                  콘텐츠와 어울리는 광고 자동 추천
+                  콘텐츠와 어울리는 브랜드 자동 추천
                 </p>
               </div>
               <div className="bg-white/50 backdrop-blur-md rounded-2xl p-5 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all">
