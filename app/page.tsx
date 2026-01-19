@@ -315,7 +315,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-zinc-900">
-                최첨단 기술로
+                AI 기술로
                 <br />
                 <span className="bg-gradient-to-r from-[#A755F6] to-[#8B5CF6] bg-clip-text text-transparent">
                   새로운 가능성을
