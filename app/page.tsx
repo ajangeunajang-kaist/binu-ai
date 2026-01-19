@@ -108,27 +108,13 @@ export default function Home() {
             솔루션을 제공합니다.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#A755F6] to-[#8B5CF6] hover:from-[#C084FC] hover:to-[#A755F6] text-white font-medium transition-all shadow-lg shadow-[#A755F6]/30">
-              무료 상담 신청
-            </button>
+         
             <a
               href="/quasar"
-              className="px-8 py-4 rounded-full bg-white/50 hover:bg-white/80 backdrop-blur-sm border border-white/50 text-zinc-700 font-medium transition-all flex items-center gap-2"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#A755F6] to-[#8B5CF6] hover:from-[#C084FC] hover:to-[#A755F6] text-white font-medium transition-all shadow-lg shadow-[#A755F6]/30"
             >
               <span>QUASAR 데모 보기</span>
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              
             </a>
           </div>
         </div>
