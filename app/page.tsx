@@ -21,7 +21,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-xl font-bold">
+              <a href="#" className="text-xl font-bold">
                 <svg
                   width="129"
                   height="21"
@@ -54,7 +54,7 @@ export default function Home() {
                     fill="#ffffff"
                   />
                 </svg>
-              </span>
+              </a>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a
