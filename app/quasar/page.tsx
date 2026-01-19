@@ -86,7 +86,7 @@ export default function Quasar() {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto p-6">
           <div className="flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
               <svg
@@ -122,12 +122,7 @@ export default function Quasar() {
                 />
               </svg>
             </a>
-            <a
-              href="/"
-              className="px-5 py-2 rounded-full bg-white/50 hover:bg-white/80 backdrop-blur-sm border border-white/30 text-zinc-700 text-sm font-medium transition-all"
-            >
-              Back to Home
-            </a>
+           
           </div>
         </div>
       </nav>

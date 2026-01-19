@@ -153,7 +153,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Service Card 1 */}
-            <div className="bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all group">
+            <div className="glass bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 shadow-lg hover:shadow-purple-200/30 transition-all group">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <svg
                   className="w-7 h-7 text-white"
@@ -179,7 +179,7 @@ export default function Home() {
             </div>
 
             {/* Service Card 2 */}
-            <div className="bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all group">
+            <div className="glass bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 shadow-lg hover:shadow-purple-200/30 transition-all group">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <svg
                   className="w-7 h-7 text-white"
@@ -205,7 +205,7 @@ export default function Home() {
             </div>
 
             {/* Service Card 3 */}
-            <div className="bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all group">
+            <div className="glass bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 shadow-lg hover:shadow-purple-200/30 transition-all group">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <svg
                   className="w-7 h-7 text-white"
@@ -230,7 +230,7 @@ export default function Home() {
             </div>
 
             {/* Service Card 4 */}
-            <div className="bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all group">
+            <div className="glass bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 shadow-lg hover:shadow-purple-200/30 transition-all group">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <svg
                   className="w-7 h-7 text-white"
@@ -256,7 +256,7 @@ export default function Home() {
             </div>
 
             {/* Service Card 5 */}
-            <div className="bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all group">
+            <div className="glass bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 shadow-lg hover:shadow-purple-200/30 transition-all group">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <svg
                   className="w-7 h-7 text-white"
@@ -281,7 +281,7 @@ export default function Home() {
             </div>
 
             {/* Service Card 6 */}
-            <div className="bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 hover:shadow-lg hover:shadow-purple-200/30 transition-all group">
+            <div className="glass bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white/60 hover:bg-white/70 shadow-lg hover:shadow-purple-200/30 transition-all group">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <svg
                   className="w-7 h-7 text-white"
