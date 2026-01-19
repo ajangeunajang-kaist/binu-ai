@@ -98,10 +98,10 @@ export default function Home() {
               Now accepting early partners
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8">
-            <span className="gradient-text-blue">AI의 미래를</span>
+          <h1 className="text-5xl leading-tight md:text-7xl lg:text-8xl font-bold tracking-tight mb-8">
+            <span className="gradient-text-blue">숏폼 속 빈 공간,</span>
             <br />
-            <span className="text-white">함께 만들어갑니다</span>
+            <span className="text-white">브랜드 가치로 채우다</span>
           </h1>
           <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
             BINU AI는 차세대 인공지능 기술로 비즈니스의 한계를 넘어서는 혁신적인
@@ -111,7 +111,10 @@ export default function Home() {
             <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#A755F6] to-[#8B5CF6] hover:from-[#C084FC] hover:to-[#A755F6] text-white font-medium transition-all glow">
               무료 상담 신청
             </button>
-            <button className="px-8 py-4 rounded-full glass hover:bg-white/10 font-medium transition-all flex items-center gap-2">
+            <a
+              href="/quasar"
+              className="px-8 py-4 rounded-full glass hover:bg-white/10 font-medium transition-all flex items-center gap-2"
+            >
               <span>QUASAR 데모 보기</span>
               <svg
                 className="w-4 h-4"
@@ -126,7 +129,7 @@ export default function Home() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
 
