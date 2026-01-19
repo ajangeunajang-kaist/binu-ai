@@ -112,7 +112,7 @@ export default function Home() {
               무료 상담 신청
             </button>
             <button className="px-8 py-4 rounded-full glass hover:bg-white/10 font-medium transition-all flex items-center gap-2">
-              <span>제품 데모 보기</span>
+              <span>QUASAR 데모 보기</span>
               <svg
                 className="w-4 h-4"
                 fill="none"
